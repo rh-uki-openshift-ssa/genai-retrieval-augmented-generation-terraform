@@ -18,5 +18,6 @@ module "project-services" {
     "deploymentmanager.googleapis.com",
     "storage-api.googleapis.com",
     "storage-component.googleapis.com",
+    "aiplatform.googleapis.com",
   ]
 }
