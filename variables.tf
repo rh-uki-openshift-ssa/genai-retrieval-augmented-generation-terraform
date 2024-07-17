@@ -7,6 +7,16 @@ variable "sa_teamname" {
   description = "Used as a suffix for the service account name"
   type        = string
 }
+variable "deletion_protection" {
+  type        = string
+  description = "Whether or not to protect Cloud SQL resources from deletion when solution is modified or changed."
+  default     = false
+}
+variable "labels" {
+  type        = map(string)
+  description = "A map of labels to apply to contained resources."
+  default     = { "genai-rag" = true }
+}
 
 variable "region" {
   description = "The region in which to set the provider"

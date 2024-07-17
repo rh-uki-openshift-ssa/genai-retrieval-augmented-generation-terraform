@@ -19,3 +19,8 @@ resource "google_project_iam_member" "allrun" {
   role    = each.key
   member  = "serviceAccount:${google_service_account.runsa.email}"
 }
+
+resource "google_service_account_key" "mykey" {
+  service_account_id = google_service_account.runsa.id
+  public_key_type    = "TYPE_X509_PEM_FILE"
+}
