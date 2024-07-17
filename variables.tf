@@ -3,10 +3,15 @@ variable "project_id" {
   type        = string
 }
 
+variable "sa_teamname" {
+  description = "Used as a suffix for the service account name"
+  type        = string
+}
+
 variable "region" {
   description = "The region in which to set the provider"
   type        = string
-  default     = "europe-west2" # You can set a default region if you like
+  default     = "us-central1" # You can set a default region if you like
 }
 variable "enable_apis" {
   type        = string
@@ -21,13 +26,11 @@ variable "instance_name" {
 variable "database_version" {
   description = "The version of the database (e.g., MYSQL_5_7, POSTGRES_13)"
   type        = string
-  default     = "MYSQL_5_7"
 }
 
 variable "tier" {
   description = "The machine type to use (e.g., db-f1-micro, db-g1-small)"
   type        = string
-  default     = "db-f1-micro"
 }
 
 variable "backup_enabled" {
