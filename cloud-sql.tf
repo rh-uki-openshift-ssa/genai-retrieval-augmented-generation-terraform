@@ -1,12 +1,12 @@
 # Handle Database
 resource "google_sql_database_instance" "main" {
   name             = "genai-rag-db-${var.sa_teamname}"
-  database_version = "POSTGRES_15"
+  database_version = var.database_version
   region           = var.region
   project          = module.project-services.project_id
 
   settings {
-    tier                         = "db-custom-1-3840" # 1 CPU, 3.75GB Memory
+    tier                         = var.tier
     disk_autoresize              = true
     disk_autoresize_limit        = 0
     disk_size                    = 10

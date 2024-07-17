@@ -36,11 +36,13 @@ variable "instance_name" {
 variable "database_version" {
   description = "The version of the database (e.g., MYSQL_5_7, POSTGRES_13)"
   type        = string
+  default     = "POSTGRES_15"
 }
 
 variable "tier" {
   description = "The machine type to use (e.g., db-f1-micro, db-g1-small)"
   type        = string
+  default     =  "db-custom-1-3840"
 }
 
 variable "backup_enabled" {
